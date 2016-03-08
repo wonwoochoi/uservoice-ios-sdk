@@ -27,6 +27,8 @@
 }
 
 - (void)loadView {
+	[self clearDraft];
+	
     UIView *view = [UIView new];
     view.backgroundColor = [UIColor whiteColor];
     view.frame = [self contentFrame];
@@ -163,7 +165,23 @@
     } else {
         [_detailsController showActivityIndicator];
         _sending = YES;
-        [UVTicket createWithMessage:_fieldsView.textView.text andEmailIfNotLoggedIn:email andName:name andCustomFields:customFields andDelegate:self];
+//        [UVTicket createWithMessage:_fieldsView.textView.text andEmailIfNotLoggedIn:email andName:name andCustomFields:customFields andDelegate:self];
+		 
+		 NSMutableString *message = [NSMutableString stringWithString:_fieldsView.textView.text];
+		 [message appendString:@"\n\n=============================="];
+		 
+		 for (NSString *key in customFields.allKeys) {
+			 
+			 NSString *value = customFields[key];
+			 
+			 [message appendFormat:@"\n%@: %@", key, value];
+			 
+		 }
+		 
+		 [message appendString:@"\n=============================="];
+		 
+		 [UVTicket createWithMessage:message andEmailIfNotLoggedIn:email andName:name andCustomFields:customFields andDelegate:self];
+		 
     }
 }
 
@@ -171,7 +189,6 @@
     [self clearDraft];
     [UVBabayaga track:SUBMIT_TICKET];
     UVSuccessViewController *next = [UVSuccessViewController new];
-    next.firstController = self.firstController;
     next.titleText = NSLocalizedStringFromTableInBundle(@"Message sent!", @"UserVoice", [UserVoice bundle], nil);
     next.text = NSLocalizedStringFromTableInBundle(@"We'll be in touch.", @"UserVoice", [UserVoice bundle], nil);
     [self.navigationController setViewControllers:@[next] animated:YES];
@@ -232,11 +249,11 @@
 }
 
 - (void)requestDismissal {
-    if (_fieldsView.textView.text.length == 0 || [_fieldsView.textView.text isEqualToString:_loadedDraft]) {
+//    if (_fieldsView.textView.text.length == 0 || [_fieldsView.textView.text isEqualToString:_loadedDraft]) {
         [self dismiss];
-    } else {
-        [self showSaveActionSheet];
-    }
+//    } else {
+//        [self showSaveActionSheet];
+//    }
 }
 
 - (void)dealloc {

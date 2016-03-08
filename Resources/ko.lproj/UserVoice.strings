@@ -72,7 +72,7 @@
 
 "Forgot password" = "비밀번호를 잊었습니다";
 
-"Give feedback or ask for help..." = "피드백을 제공하거나 도움을 요청 ...";
+"Give feedback or ask for help..." = "피드백을 제공하거나 도움을 요청하세요.";
 
 "Great! Glad we could help." = "좋아! 우리가 도울 수 다행.";
 
@@ -90,13 +90,13 @@
 
 "Loading..." = "로드 중 ...";
 
-"Message sent!" = "메시지 전송!";
+"Message sent!" = "메시지가 전송되었습니다!";
 
 "more" = "더";
 
 "Name" = "이름";
 
-"Next" = "다음에";
+"Next" = "다음";
 
 "No" = "아니요";
 
@@ -120,7 +120,7 @@
 
 "Post an idea" = "아이디어 올리기";
 
-"Powered by UserVoice" = "UserVoice에 의해 구동";
+"Powered by UserVoice" = "언니의 파우치";
 
 "Ranked %@" = "순위 %@";
 
@@ -138,7 +138,7 @@
 
 "Send" = "보내기";
 
-"Send us a message" = "우리에게 메시지 보내기";
+"Send us a message" = "메시지 보내기";
 
 "Sign in" = "로그인";
 
@@ -168,7 +168,7 @@
 
 "Was this article helpful?" = "이 문서가 유용했습니까?";
 
-"We'll be in touch." = "우리는 연락하지.";
+"We'll be in touch." = "감사합니다.";
 
 "When you post an idea on our forum, others will be able to subscribe to it and make comments. When we respond to the idea, you'll get notified." = "당신은 우리의 포럼에 아이디어를 게시하면, 다른 사람들은 구독하고 의견을 수있을 것입니다. 우리가 생각에 응답 할 때 알림을 받게됩니다.";
 
